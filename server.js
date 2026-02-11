@@ -1,26 +1,26 @@
-// server.js
 import express from "express";
 import path from "path";
-import compression from "compression";
-import helmet from "helmet";
 import { fileURLToPath } from "url";
+import { dirname } from "path";
+import dotenv from "dotenv";
 
-// ES module helpers for __dirname
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
 
 const app = express();
+const DIST_PATH = path.join(__dirname, "dist");
 
-app.use(helmet());
-app.use(compression());
+dotenv.config({ path: path.resolve(__dirname, '.env.local') });
 
-app.use(express.static(path.join(__dirname, "dist")));
+// Serve static files
+app.use(express.static(DIST_PATH));
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-  });
+// Catch-all route for SPA (all other paths serve index.html)
+app.get("/*splat", async (req, res) => {
+  res.sendFile(path.join(DIST_PATH, "index.html"));
+});
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.VITE_PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 Portfolio running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
