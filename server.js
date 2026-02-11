@@ -1,26 +1,26 @@
-const express = require("express");
-const path = require("path");
-const compression = require("compression");
-const helmet = require("helmet");
+// server.js
+import express from "express";
+import path from "path";
+import compression from "compression";
+import helmet from "helmet";
+import { fileURLToPath } from "url";
+
+// ES module helpers for __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Security middleware
 app.use(helmet());
-
-// Gzip compression
 app.use(compression());
 
-// Serve static files
 app.use(express.static(path.join(__dirname, "dist")));
 
-// Handle React routing (SPA support)
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => {
   console.log(`🚀 Portfolio running on port ${PORT}`);
 });
