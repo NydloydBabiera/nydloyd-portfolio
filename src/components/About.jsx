@@ -18,7 +18,7 @@ export default function About() {
             </p>
   
             <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-              Currently working at <strong>Theoria Medical</strong>, I develop
+              Currently working as a junio app developer, I develop
               and maintain healthcare applications that support clinical and
               operational workflows. I focus on performance optimization,
               production stability, and long-term system reliability.
