@@ -18,7 +18,7 @@ export default function About() {
             </p>
   
             <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-              Currently working as a junior application developer, I develop
+              Currently working as a <strong>Application Developer</strong>, I develop
               and maintain healthcare applications that support clinical and
               operational workflows. I focus on performance optimization,
               production stability, and long-term system reliability.
@@ -38,7 +38,7 @@ export default function About() {
             </h3>
   
             <ul className="space-y-4">
-              <li>✔ 4+ Years of Software Development Experience</li>
+              <li>✔ 5+ Years of Software Development Experience</li>
               <li>✔ Full Stack (React, Node.js, Express, SQL)</li>
               <li>✔ DevOps (Docker, CI/CD, PM2, Linux)</li>
               <li>✔ Performance Optimization & Query Tuning</li>
