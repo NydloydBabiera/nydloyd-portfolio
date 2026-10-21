@@ -8,7 +8,7 @@ export default function Experience() {
           <h3 className="text-xl font-semibold">
             Junior Application Developer — Theoria Medical
           </h3>
-          <p className="text-sm text-gray-500">2024 - Present</p>
+          <p className="text-sm text-gray-500">2024 - 2026</p>
           <ul className="list-disc ml-6 mt-4 space-y-2">
             <li>Developed full-stack healthcare applications</li>
             <li>Built scalable backend APIs</li>
